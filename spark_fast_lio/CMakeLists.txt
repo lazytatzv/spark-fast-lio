@@ -119,6 +119,9 @@ add_library(spark_lio_component SHARED
   src/preprocess.cpp
 )
 
+# Limit compile concurrency to 1 to avoid OOM killer during heavy template instantiation
+set_property(TARGET spark_lio_component PROPERTY JOB_POOL_COMPILE link)
+
 # Example: C++ standard
 target_compile_features(spark_lio_component PUBLIC cxx_std_20)
 
