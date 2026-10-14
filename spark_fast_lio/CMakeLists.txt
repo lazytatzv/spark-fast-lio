@@ -167,7 +167,7 @@ rclcpp_components_register_node(
 
 # Install
 install(
-  TARGETS spark_lio_component
+  TARGETS ikd_tree spark_lio_component
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION lib/${PROJECT_NAME}
@@ -179,4 +179,5 @@ install(DIRECTORY launch config rviz
 )
 
 # Generate package info
+ament_export_libraries(ikd_tree spark_lio_component)
 ament_package()
